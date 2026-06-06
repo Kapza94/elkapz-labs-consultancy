@@ -15,7 +15,6 @@ const organizationSchema = {
   name: "elkapz labs",
   description:
     "Practical AI implementation and automation for small businesses.",
-  email: "elkapzlabs@gmail.com",
   areaServed: "Europe",
   address: {
     "@type": "PostalAddress",

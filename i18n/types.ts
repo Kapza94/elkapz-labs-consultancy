@@ -26,7 +26,6 @@ export interface Dictionary {
   };
   common: {
     brandLabel: string;
-    email: string;
     location: string;
     openMenu: string;
     closeMenu: string;
@@ -108,10 +107,47 @@ export interface Dictionary {
     description: string;
     response: string;
   };
+  contact: {
+    title: string;
+    description: string;
+    fields: {
+      name: string;
+      email: string;
+      company: string;
+      phone: string;
+      service: string;
+      challenge: string;
+      consent: string;
+    };
+    placeholders: {
+      name: string;
+      email: string;
+      company: string;
+      phone: string;
+      challenge: string;
+    };
+    services: {
+      prompt: string;
+      audit: string;
+      launch: string;
+      build: string;
+      automate: string;
+      advisor: string;
+      unsure: string;
+    };
+    submit: string;
+    submitting: string;
+    success: string;
+    error: string;
+    unavailable: string;
+    privacy: string;
+    invalidField: string;
+  };
   footer: {
     description: string;
     navigation: string;
     contact: string;
+    contactForm: string;
     rights: string;
   };
 }

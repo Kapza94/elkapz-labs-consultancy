@@ -18,7 +18,7 @@ describe("internationalization", () => {
       Object.keys(dictionaries["sr-Latn"]),
     );
     expect(dictionaries["sr-Latn"].hero.title).toContain("Praktični");
-    expect(dictionaries["sr-Latn"].services.items).toHaveLength(4);
+    expect(dictionaries["sr-Latn"].services.items).toHaveLength(3);
     expect(dictionaries["sr-Latn"].pricing.items).toHaveLength(4);
     expect(dictionaries["sr-Latn"].faq.items).toHaveLength(5);
   });

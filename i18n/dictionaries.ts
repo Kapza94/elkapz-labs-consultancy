@@ -8,7 +8,6 @@ const en: Dictionary = {
   },
   common: {
     brandLabel: "AI implementation & automation",
-    email: "elkapzlabs@gmail.com",
     location: "Belgrade, Serbia · Working across Europe",
     openMenu: "Open navigation",
     closeMenu: "Close navigation",
@@ -77,11 +76,6 @@ const en: Dictionary = {
         title: "AI Starter Setup",
         description: "Give your team a reliable, documented way to use AI in daily work.",
         deliverables: ["ChatGPT / Claude setup", "Custom AI assistants", "Prompt libraries", "Staff training", "SOP documentation"],
-      },
-      {
-        title: "Customer Support AI System",
-        description: "Help support teams answer faster without losing judgment, context, or escalation control.",
-        deliverables: ["FAQ automation", "Reply assistants", "Knowledge base structure", "Ticket tagging", "Escalation workflows"],
       },
       {
         title: "AI Automation & Integration",
@@ -195,12 +189,55 @@ const en: Dictionary = {
     title: "Start with an AI audit and find out where your business is wasting time.",
     description:
       "Tell us which work feels repetitive, slow, or difficult to scale. We will help you identify the most useful place to begin.",
-    response: "Email us directly. We usually reply within two business days.",
+    response:
+      "Complete the form with your main bottleneck. We usually reply within two business days.",
+  },
+  contact: {
+    title: "Tell us where work is getting stuck.",
+    description:
+      "A few practical details help us understand whether an audit, implementation, or custom automation is the right starting point.",
+    fields: {
+      name: "Full name",
+      email: "Business email",
+      company: "Company name",
+      phone: "Phone (optional)",
+      service: "Interested service",
+      challenge: "Biggest repetitive-work problem",
+      consent:
+        "I agree that elkapz labs may contact me about this enquiry.",
+    },
+    placeholders: {
+      name: "Your name",
+      email: "you@company.com",
+      company: "Your company",
+      phone: "+381...",
+      challenge:
+        "What is repeated, slow, manual, or difficult to scale today?",
+    },
+    services: {
+      prompt: "Select an option",
+      audit: "AI Business Audit",
+      launch: "Launch package",
+      build: "Build package",
+      automate: "Automate package",
+      advisor: "AI Advisor",
+      unsure: "Not sure yet",
+    },
+    submit: "Send enquiry",
+    submitting: "Sending enquiry...",
+    success: "Thanks — your enquiry has been sent.",
+    error: "We could not send your enquiry. Please try again in a moment.",
+    unavailable:
+      "The contact service is not configured yet. Please try again later.",
+    privacy:
+      "Your details are used only to review and respond to this enquiry.",
+    invalidField: "Check this field and try again.",
   },
   footer: {
     description: "Practical AI implementation and automation for small businesses.",
     navigation: "Navigation",
     contact: "Contact",
+    contactForm: "Contact form",
     rights: "All rights reserved.",
   },
 };
@@ -213,7 +250,6 @@ const srLatn: Dictionary = {
   },
   common: {
     brandLabel: "AI implementacija i automatizacija",
-    email: "elkapzlabs@gmail.com",
     location: "Beograd, Srbija · Radimo sa klijentima širom Evrope",
     openMenu: "Otvori navigaciju",
     closeMenu: "Zatvori navigaciju",
@@ -282,11 +318,6 @@ const srLatn: Dictionary = {
         title: "Početno AI postavljanje",
         description: "Dajemo timu pouzdan i dokumentovan način da koristi AI u svakodnevnom radu.",
         deliverables: ["ChatGPT / Claude postavljanje", "Prilagođeni AI asistenti", "Biblioteka promptova", "Obuka zaposlenih", "SOP dokumentacija"],
-      },
-      {
-        title: "AI sistem za korisničku podršku",
-        description: "Pomažemo timu da odgovara brže bez gubitka procene, konteksta i kontrole eskalacija.",
-        deliverables: ["Automatizacija čestih pitanja", "Asistenti za odgovore", "Struktura baze znanja", "Označavanje tiketa", "Tokovi eskalacije"],
       },
       {
         title: "AI automatizacija i integracije",
@@ -400,12 +431,55 @@ const srLatn: Dictionary = {
     title: "Počnite AI auditom i saznajte gde vaše poslovanje gubi vreme.",
     description:
       "Recite nam koji poslovi deluju ponavljajuće, sporo ili teško za skaliranje. Pomoći ćemo vam da pronađete najkorisnije mesto za početak.",
-    response: "Pišite nam direktno. Obično odgovaramo u roku od dva radna dana.",
+    response:
+      "Popunite formular i opišite glavno usko grlo. Obično odgovaramo u roku od dva radna dana.",
+  },
+  contact: {
+    title: "Recite nam gde posao zastaje.",
+    description:
+      "Nekoliko praktičnih informacija pomaže nam da procenimo da li su audit, implementacija ili prilagođena automatizacija pravi početak.",
+    fields: {
+      name: "Ime i prezime",
+      email: "Poslovni imejl",
+      company: "Naziv firme",
+      phone: "Telefon (opciono)",
+      service: "Usluga koja vas zanima",
+      challenge: "Najveći problem sa ponavljajućim poslovima",
+      consent:
+        "Saglasan/na sam da me elkapz labs kontaktira povodom ovog upita.",
+    },
+    placeholders: {
+      name: "Vaše ime",
+      email: "vi@firma.com",
+      company: "Vaša firma",
+      phone: "+381...",
+      challenge:
+        "Šta je danas ponavljajuće, sporo, ručno ili teško za skaliranje?",
+    },
+    services: {
+      prompt: "Izaberite opciju",
+      audit: "AI audit poslovanja",
+      launch: "Launch paket",
+      build: "Build paket",
+      automate: "Automate paket",
+      advisor: "AI Advisor",
+      unsure: "Još nisam siguran/na",
+    },
+    submit: "Pošaljite upit",
+    submitting: "Slanje upita...",
+    success: "Hvala — vaš upit je poslat.",
+    error: "Nismo uspeli da pošaljemo upit. Pokušajte ponovo za trenutak.",
+    unavailable:
+      "Kontakt servis još nije podešen. Pokušajte ponovo kasnije.",
+    privacy:
+      "Vaše podatke koristimo samo za pregled i odgovor na ovaj upit.",
+    invalidField: "Proverite ovo polje i pokušajte ponovo.",
   },
   footer: {
     description: "Praktična AI implementacija i automatizacija za mala preduzeća.",
     navigation: "Navigacija",
     contact: "Kontakt",
+    contactForm: "Kontakt formular",
     rights: "Sva prava zadržana.",
   },
 };

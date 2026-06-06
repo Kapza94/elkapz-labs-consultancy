@@ -2,7 +2,6 @@
 
 import {
   Bot,
-  Headphones,
   Route,
   SearchCheck,
   type LucideIcon,
@@ -12,12 +11,11 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { useLocale } from "@/i18n/locale-provider";
 
-const icons: LucideIcon[] = [SearchCheck, Bot, Headphones, Route];
+const icons: LucideIcon[] = [SearchCheck, Bot, Route];
 const spans = [
-  "lg:col-span-7",
-  "lg:col-span-5",
   "lg:col-span-5",
   "lg:col-span-7",
+  "lg:col-span-12",
 ];
 
 export function Services() {

@@ -17,10 +17,9 @@ describe("Header", () => {
       "href",
       "#services",
     );
-    expect(screen.getByRole("link", { name: "Book an AI Audit" })).toHaveAttribute(
-      "href",
-      expect.stringContaining("mailto:elkapzlabs@gmail.com"),
-    );
+    expect(
+      screen.getByRole("link", { name: "Book an AI Audit" }),
+    ).toHaveAttribute("href", "#contact");
   });
 
   it("switches the visible navigation to Serbian", async () => {

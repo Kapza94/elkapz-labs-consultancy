@@ -37,7 +37,10 @@ describe("landing sections", () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getAllByTestId("problem-item")).toHaveLength(6);
-    expect(screen.getAllByTestId("service-card")).toHaveLength(4);
+    expect(screen.getAllByTestId("service-card")).toHaveLength(3);
+    expect(
+      screen.queryByRole("heading", { name: "Customer Support AI System" }),
+    ).not.toBeInTheDocument();
     expect(screen.getByText(/8\+ years across customer support/i)).toBeInTheDocument();
     expect(screen.getAllByTestId("process-step")).toHaveLength(4);
     expect(screen.getByText("€999")).toBeInTheDocument();
@@ -62,18 +65,16 @@ describe("landing sections", () => {
     ).toBeVisible();
   });
 
-  it("targets the supplied email from conversion actions", () => {
+  it("routes conversion actions to the contact form without mail links", () => {
     renderSections();
-    const mailLinks = screen
-      .getAllByRole("link")
-      .filter((link) => link.getAttribute("href")?.startsWith("mailto:"));
+    const links = screen.getAllByRole("link");
 
-    expect(mailLinks.length).toBeGreaterThanOrEqual(5);
-    for (const link of mailLinks) {
-      expect(link).toHaveAttribute(
-        "href",
-        expect.stringContaining("elkapzlabs@gmail.com"),
-      );
-    }
+    expect(
+      links.filter((link) => link.getAttribute("href") === "#contact").length,
+    ).toBeGreaterThanOrEqual(5);
+    expect(
+      links.some((link) => link.getAttribute("href")?.startsWith("mailto:")),
+    ).toBe(false);
+    expect(screen.getByLabelText("Full name")).toBeInTheDocument();
   });
 });
