@@ -166,7 +166,10 @@ export function ContactForm() {
           />
         </Field>
 
-        <div className="absolute left-[-10000px] top-auto size-px overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute left-[-10000px] top-auto size-px overflow-hidden"
+        >
           <label htmlFor="contact-website">Website</label>
           <input
             id="contact-website"
@@ -177,7 +180,7 @@ export function ContactForm() {
           />
         </div>
 
-        <label className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-muted-strong">
+        <label className="flex cursor-pointer items-start gap-3 text-left text-sm leading-6 text-muted-strong">
           <input
             name="consent"
             type="checkbox"
