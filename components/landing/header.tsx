@@ -79,13 +79,11 @@ export function Header() {
             ))}
           </div>
 
-          <ButtonLink
-            href={auditHref}
-            className="hidden xl:inline-flex"
-            showArrow
-          >
-            {t.common.bookAudit}
-          </ButtonLink>
+          <div className="hidden xl:block">
+            <ButtonLink href={auditHref} showArrow>
+              {t.common.bookAudit}
+            </ButtonLink>
+          </div>
 
           <button
             type="button"

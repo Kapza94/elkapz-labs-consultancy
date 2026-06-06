@@ -1,11 +1,14 @@
 .superpowers/
 .agents/
+.playwright-cli/
 node_modules/
 .next/
 out/
 .env*
 !.env.example
 .DS_Store
+.qa-*.png
+tsconfig.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

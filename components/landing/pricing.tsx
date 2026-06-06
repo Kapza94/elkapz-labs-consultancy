@@ -48,7 +48,7 @@ export function Pricing() {
                     {item.name}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
-                  <p className="mt-8 font-mono text-[clamp(1.7rem,3vw,2.35rem)] font-medium tracking-[-0.055em] text-foreground">
+                  <p className="mt-8 whitespace-nowrap font-mono text-[clamp(1.5rem,2.25vw,2.1rem)] font-medium tracking-[-0.055em] text-foreground">
                     {item.price}
                   </p>
                   <ul className="mt-8 space-y-3 border-t border-line pt-6">
