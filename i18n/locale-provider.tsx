@@ -41,6 +41,33 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.title = dictionaries[locale].meta.title;
+
+    let description = document.querySelector<HTMLMetaElement>(
+      'meta[name="description"]',
+    );
+    if (!description) {
+      description = document.createElement("meta");
+      description.name = "description";
+      document.head.appendChild(description);
+    }
+    description.content = dictionaries[locale].meta.description;
+
+    const socialMetadata = [
+      ["property", "og:title", dictionaries[locale].meta.title],
+      ["property", "og:description", dictionaries[locale].meta.description],
+    ] as const;
+    for (const [attribute, key, content] of socialMetadata) {
+      let meta = document.querySelector<HTMLMetaElement>(
+        `meta[${attribute}="${key}"]`,
+      );
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute(attribute, key);
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    }
   }, [locale]);
 
   const setLocale = (nextLocale: Locale) => {
