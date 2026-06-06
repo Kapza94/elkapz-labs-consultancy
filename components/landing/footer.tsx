@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 
 import { useLocale } from "@/i18n/locale-provider";
 
@@ -44,11 +44,11 @@ export function Footer() {
         <div>
           <p className="eyebrow">{t.footer.contact}</p>
           <a
-            href={`mailto:${t.common.email}`}
+            href="#contact"
             className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm text-foreground transition-colors duration-150 hover:text-accent"
           >
-            {t.common.email}
-            <ArrowUpRight aria-hidden="true" size={15} strokeWidth={1.7} />
+            {t.footer.contactForm}
+            <ArrowDownRight aria-hidden="true" size={15} strokeWidth={1.7} />
           </a>
         </div>
       </div>

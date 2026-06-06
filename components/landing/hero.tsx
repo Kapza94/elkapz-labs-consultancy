@@ -8,10 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { useLocale } from "@/i18n/locale-provider";
 
 export function Hero() {
-  const { dictionary: t, locale } = useLocale();
-  const auditHref = `mailto:${t.common.email}?subject=${encodeURIComponent(
-    locale === "en" ? "AI Audit enquiry" : "Upit za AI audit",
-  )}`;
+  const { dictionary: t } = useLocale();
 
   return (
     <section id="top" className="relative overflow-hidden border-b border-line">
@@ -33,7 +30,7 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={auditHref} showArrow>
+              <ButtonLink href="#contact" showArrow>
                 {t.common.bookAudit}
               </ButtonLink>
               <ButtonLink href="#services" variant="secondary">

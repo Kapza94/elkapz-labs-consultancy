@@ -48,6 +48,10 @@ On mobile, message precedes the form. The section remains fully usable at 320px.
 - JSON-LD: remove the public email property
 - Client translation dictionaries: remove the email address
 
+## Service Scope Update
+
+Remove the dedicated “Customer Support AI System” service card in English and Serbian. Retain customer-support experience in the background and credibility sections because it describes operational experience rather than a standalone consultancy offer.
+
 ## Server Architecture
 
 `app/api/contact/route.ts` accepts only JSON POST requests and runs in the Node.js runtime.
@@ -100,4 +104,3 @@ Gmail requires:
 - UI tests: all fields, bilingual labels, anchor replacement, loading state, success reset, error recovery, no `mailto:` links
 - Full lint, typecheck, test, production build
 - Playwright QA at 320px, 768px, and 1280px in both languages
-

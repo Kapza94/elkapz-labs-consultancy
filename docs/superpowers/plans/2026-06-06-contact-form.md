@@ -72,6 +72,7 @@
 - [ ] Write failing assertions that CTAs target `#contact`, no `mailto:` links exist, no email is rendered, and JSON-LD omits email.
 - [ ] Run tests; confirm existing email links fail assertions.
 - [ ] Replace all public email references and remove email from client dictionaries and structured data.
+- [ ] Remove the dedicated customer-support service card in both locales and rebalance the remaining three-card grid.
 - [ ] Run full tests; expect pass.
 - [ ] Commit `refactor: route all enquiries through contact form`.
 

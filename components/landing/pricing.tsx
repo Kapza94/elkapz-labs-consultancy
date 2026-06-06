@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { useLocale } from "@/i18n/locale-provider";
 
 export function Pricing() {
-  const { dictionary: t, locale } = useLocale();
+  const { dictionary: t } = useLocale();
 
   return (
     <section id="pricing" className="section-shell scroll-mt-24 border-b border-line">
@@ -22,11 +22,6 @@ export function Pricing() {
         </Reveal>
         <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {t.pricing.items.map((item, index) => {
-            const subject = encodeURIComponent(
-              locale === "en"
-                ? `Enquiry about ${item.name}`
-                : `Upit za ${item.name} paket`,
-            );
             return (
               <Reveal key={item.name} delay={index * 0.045}>
                 <article
@@ -60,7 +55,7 @@ export function Pricing() {
                     ))}
                   </ul>
                   <ButtonLink
-                    href={`mailto:${t.common.email}?subject=${subject}`}
+                    href="#contact"
                     variant={item.badge ? "primary" : "secondary"}
                     showArrow
                     className="mt-auto w-full"

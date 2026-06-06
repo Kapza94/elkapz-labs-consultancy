@@ -24,9 +24,7 @@ export function Header() {
     [t.nav.pricing, "#pricing"],
     [t.nav.faq, "#faq"],
   ];
-  const auditHref = `mailto:${t.common.email}?subject=${encodeURIComponent(
-    locale === "en" ? "AI Audit enquiry" : "Upit za AI audit",
-  )}`;
+  const auditHref = "#contact";
 
   const closeMenu = () => setMenuOpen(false);
 

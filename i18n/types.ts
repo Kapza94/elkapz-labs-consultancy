@@ -26,7 +26,6 @@ export interface Dictionary {
   };
   common: {
     brandLabel: string;
-    email: string;
     location: string;
     openMenu: string;
     closeMenu: string;
@@ -148,6 +147,7 @@ export interface Dictionary {
     description: string;
     navigation: string;
     contact: string;
+    contactForm: string;
     rights: string;
   };
 }

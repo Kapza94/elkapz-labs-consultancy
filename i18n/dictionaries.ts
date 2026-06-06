@@ -8,7 +8,6 @@ const en: Dictionary = {
   },
   common: {
     brandLabel: "AI implementation & automation",
-    email: "elkapzlabs@gmail.com",
     location: "Belgrade, Serbia · Working across Europe",
     openMenu: "Open navigation",
     closeMenu: "Close navigation",
@@ -77,11 +76,6 @@ const en: Dictionary = {
         title: "AI Starter Setup",
         description: "Give your team a reliable, documented way to use AI in daily work.",
         deliverables: ["ChatGPT / Claude setup", "Custom AI assistants", "Prompt libraries", "Staff training", "SOP documentation"],
-      },
-      {
-        title: "Customer Support AI System",
-        description: "Help support teams answer faster without losing judgment, context, or escalation control.",
-        deliverables: ["FAQ automation", "Reply assistants", "Knowledge base structure", "Ticket tagging", "Escalation workflows"],
       },
       {
         title: "AI Automation & Integration",
@@ -195,7 +189,8 @@ const en: Dictionary = {
     title: "Start with an AI audit and find out where your business is wasting time.",
     description:
       "Tell us which work feels repetitive, slow, or difficult to scale. We will help you identify the most useful place to begin.",
-    response: "Email us directly. We usually reply within two business days.",
+    response:
+      "Complete the form with your main bottleneck. We usually reply within two business days.",
   },
   contact: {
     title: "Tell us where work is getting stuck.",
@@ -242,6 +237,7 @@ const en: Dictionary = {
     description: "Practical AI implementation and automation for small businesses.",
     navigation: "Navigation",
     contact: "Contact",
+    contactForm: "Contact form",
     rights: "All rights reserved.",
   },
 };
@@ -254,7 +250,6 @@ const srLatn: Dictionary = {
   },
   common: {
     brandLabel: "AI implementacija i automatizacija",
-    email: "elkapzlabs@gmail.com",
     location: "Beograd, Srbija · Radimo sa klijentima širom Evrope",
     openMenu: "Otvori navigaciju",
     closeMenu: "Zatvori navigaciju",
@@ -323,11 +318,6 @@ const srLatn: Dictionary = {
         title: "Početno AI postavljanje",
         description: "Dajemo timu pouzdan i dokumentovan način da koristi AI u svakodnevnom radu.",
         deliverables: ["ChatGPT / Claude postavljanje", "Prilagođeni AI asistenti", "Biblioteka promptova", "Obuka zaposlenih", "SOP dokumentacija"],
-      },
-      {
-        title: "AI sistem za korisničku podršku",
-        description: "Pomažemo timu da odgovara brže bez gubitka procene, konteksta i kontrole eskalacija.",
-        deliverables: ["Automatizacija čestih pitanja", "Asistenti za odgovore", "Struktura baze znanja", "Označavanje tiketa", "Tokovi eskalacije"],
       },
       {
         title: "AI automatizacija i integracije",
@@ -441,7 +431,8 @@ const srLatn: Dictionary = {
     title: "Počnite AI auditom i saznajte gde vaše poslovanje gubi vreme.",
     description:
       "Recite nam koji poslovi deluju ponavljajuće, sporo ili teško za skaliranje. Pomoći ćemo vam da pronađete najkorisnije mesto za početak.",
-    response: "Pišite nam direktno. Obično odgovaramo u roku od dva radna dana.",
+    response:
+      "Popunite formular i opišite glavno usko grlo. Obično odgovaramo u roku od dva radna dana.",
   },
   contact: {
     title: "Recite nam gde posao zastaje.",
@@ -488,6 +479,7 @@ const srLatn: Dictionary = {
     description: "Praktična AI implementacija i automatizacija za mala preduzeća.",
     navigation: "Navigacija",
     contact: "Kontakt",
+    contactForm: "Kontakt formular",
     rights: "Sva prava zadržana.",
   },
 };

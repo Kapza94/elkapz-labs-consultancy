@@ -22,7 +22,15 @@ describe("complete landing page", () => {
     expect(document.querySelector("#process")).toBeInTheDocument();
     expect(document.querySelector("#pricing")).toBeInTheDocument();
     expect(document.querySelector("#faq")).toBeInTheDocument();
+    expect(document.querySelector("#contact")).toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
+    expect(document.querySelector('a[href^="mailto:"]')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText("elkapzlabs@gmail.com"),
+    ).not.toBeInTheDocument();
+    expect(
+      document.querySelector('script[type="application/ld+json"]')?.textContent,
+    ).not.toContain("email");
   });
 
   it("updates visible content and document metadata in Serbian", async () => {
