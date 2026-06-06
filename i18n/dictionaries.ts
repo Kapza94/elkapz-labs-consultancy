@@ -197,6 +197,47 @@ const en: Dictionary = {
       "Tell us which work feels repetitive, slow, or difficult to scale. We will help you identify the most useful place to begin.",
     response: "Email us directly. We usually reply within two business days.",
   },
+  contact: {
+    title: "Tell us where work is getting stuck.",
+    description:
+      "A few practical details help us understand whether an audit, implementation, or custom automation is the right starting point.",
+    fields: {
+      name: "Full name",
+      email: "Business email",
+      company: "Company name",
+      phone: "Phone (optional)",
+      service: "Interested service",
+      challenge: "Biggest repetitive-work problem",
+      consent:
+        "I agree that elkapz labs may contact me about this enquiry.",
+    },
+    placeholders: {
+      name: "Your name",
+      email: "you@company.com",
+      company: "Your company",
+      phone: "+381...",
+      challenge:
+        "What is repeated, slow, manual, or difficult to scale today?",
+    },
+    services: {
+      prompt: "Select an option",
+      audit: "AI Business Audit",
+      launch: "Launch package",
+      build: "Build package",
+      automate: "Automate package",
+      advisor: "AI Advisor",
+      unsure: "Not sure yet",
+    },
+    submit: "Send enquiry",
+    submitting: "Sending enquiry...",
+    success: "Thanks — your enquiry has been sent.",
+    error: "We could not send your enquiry. Please try again in a moment.",
+    unavailable:
+      "The contact service is not configured yet. Please try again later.",
+    privacy:
+      "Your details are used only to review and respond to this enquiry.",
+    invalidField: "Check this field and try again.",
+  },
   footer: {
     description: "Practical AI implementation and automation for small businesses.",
     navigation: "Navigation",
@@ -401,6 +442,47 @@ const srLatn: Dictionary = {
     description:
       "Recite nam koji poslovi deluju ponavljajuće, sporo ili teško za skaliranje. Pomoći ćemo vam da pronađete najkorisnije mesto za početak.",
     response: "Pišite nam direktno. Obično odgovaramo u roku od dva radna dana.",
+  },
+  contact: {
+    title: "Recite nam gde posao zastaje.",
+    description:
+      "Nekoliko praktičnih informacija pomaže nam da procenimo da li su audit, implementacija ili prilagođena automatizacija pravi početak.",
+    fields: {
+      name: "Ime i prezime",
+      email: "Poslovni imejl",
+      company: "Naziv firme",
+      phone: "Telefon (opciono)",
+      service: "Usluga koja vas zanima",
+      challenge: "Najveći problem sa ponavljajućim poslovima",
+      consent:
+        "Saglasan/na sam da me elkapz labs kontaktira povodom ovog upita.",
+    },
+    placeholders: {
+      name: "Vaše ime",
+      email: "vi@firma.com",
+      company: "Vaša firma",
+      phone: "+381...",
+      challenge:
+        "Šta je danas ponavljajuće, sporo, ručno ili teško za skaliranje?",
+    },
+    services: {
+      prompt: "Izaberite opciju",
+      audit: "AI audit poslovanja",
+      launch: "Launch paket",
+      build: "Build paket",
+      automate: "Automate paket",
+      advisor: "AI Advisor",
+      unsure: "Još nisam siguran/na",
+    },
+    submit: "Pošaljite upit",
+    submitting: "Slanje upita...",
+    success: "Hvala — vaš upit je poslat.",
+    error: "Nismo uspeli da pošaljemo upit. Pokušajte ponovo za trenutak.",
+    unavailable:
+      "Kontakt servis još nije podešen. Pokušajte ponovo kasnije.",
+    privacy:
+      "Vaše podatke koristimo samo za pregled i odgovor na ovaj upit.",
+    invalidField: "Proverite ovo polje i pokušajte ponovo.",
   },
   footer: {
     description: "Praktična AI implementacija i automatizacija za mala preduzeća.",
