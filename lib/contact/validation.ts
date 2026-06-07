@@ -6,6 +6,7 @@ import {
 } from "./types";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern = /^\+?[0-9()\s.-]+$/;
 
 function valueAsString(input: Record<string, unknown>, field: ContactField) {
   const value = input[field];
@@ -39,8 +40,15 @@ export function validateContactSubmission(
   if (company.length < 2 || company.length > 120) {
     errors.company = "Company must contain 2 to 120 characters.";
   }
-  if (phone.length > 40) {
-    errors.phone = "Phone must contain no more than 40 characters.";
+  const phoneDigits = phone.replace(/\D/g, "");
+  if (
+    phone.length > 0 &&
+    (phone.length > 40 ||
+      !phonePattern.test(phone) ||
+      phoneDigits.length < 7 ||
+      phoneDigits.length > 15)
+  ) {
+    errors.phone = "Enter a valid phone number.";
   }
   if (!contactServices.includes(service as ContactSubmission["service"])) {
     errors.service = "Select a valid service.";

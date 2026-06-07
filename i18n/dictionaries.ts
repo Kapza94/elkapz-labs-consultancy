@@ -231,7 +231,16 @@ const en: Dictionary = {
       "The contact service is not configured yet. Please try again later.",
     privacy:
       "Your details are used only to review and respond to this enquiry.",
-    invalidField: "Check this field and try again.",
+    validation: {
+      name: "Enter a name containing 2 to 100 characters.",
+      email: "Enter a valid business email address.",
+      company: "Enter a company name containing 2 to 120 characters.",
+      phone:
+        "Use 7 to 15 digits and only spaces, +, parentheses, dots, or hyphens.",
+      service: "Select the service you are interested in.",
+      challenge: "Describe the problem using 20 to 2,000 characters.",
+      consent: "Confirm that we may contact you about this enquiry.",
+    },
   },
   footer: {
     description: "Practical AI implementation and automation for small businesses.",
@@ -473,7 +482,16 @@ const srLatn: Dictionary = {
       "Kontakt servis još nije podešen. Pokušajte ponovo kasnije.",
     privacy:
       "Vaše podatke koristimo samo za pregled i odgovor na ovaj upit.",
-    invalidField: "Proverite ovo polje i pokušajte ponovo.",
+    validation: {
+      name: "Unesite ime od 2 do 100 znakova.",
+      email: "Unesite ispravnu poslovnu imejl adresu.",
+      company: "Unesite naziv firme od 2 do 120 znakova.",
+      phone:
+        "Koristite 7 do 15 cifara i samo razmake, +, zagrade, tačke ili crtice.",
+      service: "Izaberite uslugu koja vas zanima.",
+      challenge: "Opišite problem koristeći 20 do 2.000 znakova.",
+      consent: "Potvrdite da možemo da vas kontaktiramo povodom ovog upita.",
+    },
   },
   footer: {
     description: "Praktična AI implementacija i automatizacija za mala preduzeća.",
