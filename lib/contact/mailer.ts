@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 import type { ContactService, ContactSubmission } from "./types";
 
@@ -73,30 +73,30 @@ export function buildContactEmail(submission: ContactSubmission) {
 export async function sendContactEmail(
   submission: ContactSubmission,
 ): Promise<MailResult> {
-  const user = process.env.GMAIL_USER?.trim();
-  const password = process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, "");
-  const recipient = process.env.CONTACT_TO_EMAIL?.trim() || user;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const sender = process.env.RESEND_FROM_EMAIL?.trim();
+  const recipient = process.env.CONTACT_TO_EMAIL?.trim();
 
-  if (!user || !password || !recipient) {
+  if (!apiKey || !sender || !recipient) {
     return { ok: false, reason: "configuration" };
   }
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user,
-      pass: password,
-    },
-  });
+  const resend = new Resend(apiKey);
   const message = buildContactEmail(submission);
 
   try {
-    await transporter.sendMail({
-      from: `"elkapz labs website" <${user}>`,
-      to: recipient,
+    const { error } = await resend.emails.send({
+      from: sender,
+      to: [recipient],
       replyTo: submission.email,
       ...message,
     });
+
+    if (error) {
+      console.error("Contact email delivery failed.", error);
+      return { ok: false, reason: "delivery" };
+    }
+
     return { ok: true };
   } catch (error) {
     console.error("Contact email delivery failed.", error);
