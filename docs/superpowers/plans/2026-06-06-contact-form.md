@@ -2,11 +2,11 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Replace all email-client CTAs with a bilingual embedded form delivered securely through Gmail SMTP.
+**Goal:** Replace all email-client CTAs with a bilingual embedded form delivered securely through Resend.
 
-**Architecture:** A client contact component submits JSON to a Next.js Node route. Pure validation and email formatting live in focused server modules; Nodemailer credentials remain environment-only. Existing CTA components link to the form anchor.
+**Architecture:** A client contact component submits JSON to a Next.js Node route. Pure validation and email formatting live in focused server modules; Resend credentials remain environment-only. Existing CTA components link to the form anchor.
 
-**Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS 4, Nodemailer, Vitest, Testing Library, Playwright CLI
+**Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS 4, Resend, Vitest, Testing Library, Playwright CLI
 
 ---
 
@@ -23,7 +23,7 @@
 - [ ] Run focused tests; expect pass.
 - [ ] Commit `feat: validate contact submissions`.
 
-### Task 2: Gmail Delivery Route
+### Task 2: Email Delivery Route
 
 **Files:**
 - Create: `lib/contact/mailer.ts`
@@ -31,12 +31,12 @@
 - Create: `.env.example`
 - Test: `tests/contact-route.test.ts`
 
-- [ ] Write failing tests for valid delivery, invalid payload, honeypot, missing Gmail config, and provider failure.
+- [ ] Write failing tests for valid delivery, invalid payload, honeypot, missing Resend config, and provider failure.
 - [ ] Run focused tests; confirm expected module failure.
-- [ ] Install `nodemailer` and `@types/nodemailer`.
-- [ ] Implement escaped text/HTML email generation, Gmail transport, reply-to handling, and safe status responses.
+- [ ] Install `resend`.
+- [ ] Implement escaped text/HTML email generation, Resend delivery, reply-to handling, and safe status responses.
 - [ ] Run focused and full tests; expect pass.
-- [ ] Commit `feat: deliver contact enquiries through Gmail`.
+- [ ] Commit `feat: deliver contact enquiries through Resend`.
 
 ### Task 3: Bilingual Contact Form
 
@@ -84,7 +84,7 @@
 - [ ] Run `npm run check`.
 - [ ] Run `npm run build`.
 - [ ] Start local server and inspect form at 320px, 768px, and 1280px.
-- [ ] Test English and Serbian, keyboard order, validation, loading, server error, and success state using Playwright CLI with SMTP mocked through missing-config behavior locally.
+- [ ] Test English and Serbian, keyboard order, validation, loading, server error, and success state using Playwright CLI with delivery mocked through missing-config behavior locally.
 - [ ] Confirm no `mailto:` links or rendered email address.
 - [ ] Commit any refinement.
 - [ ] Push `feature/contact-form`.

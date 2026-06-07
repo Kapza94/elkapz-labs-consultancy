@@ -71,7 +71,7 @@ describe("POST /api/contact", () => {
     expect(sendContactEmail).not.toHaveBeenCalled();
   });
 
-  it("returns 503 when Gmail is not configured", async () => {
+  it("returns 503 when email delivery is not configured", async () => {
     sendContactEmail.mockResolvedValue({
       ok: false,
       reason: "configuration",
@@ -86,7 +86,7 @@ describe("POST /api/contact", () => {
     });
   });
 
-  it("returns 502 when Gmail rejects delivery", async () => {
+  it("returns 502 when the email provider rejects delivery", async () => {
     sendContactEmail.mockResolvedValue({ ok: false, reason: "delivery" });
 
     const response = await POST(request(validPayload));

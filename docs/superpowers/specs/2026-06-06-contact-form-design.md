@@ -2,7 +2,7 @@
 
 ## Goal
 
-Replace every public email action with an embedded bilingual contact form that sends enquiries to Gmail through a server-only Next.js endpoint. Visitors must stay on the website and receive clear success or recovery feedback.
+Replace every public email action with an embedded bilingual contact form that sends enquiries through Resend from a server-only Next.js endpoint. Visitors must stay on the website and receive clear success or recovery feedback.
 
 ## User Flow
 
@@ -11,7 +11,7 @@ Replace every public email action with an embedded bilingual contact form that s
 3. Client-side required fields provide immediate accessible guidance.
 4. The form submits JSON to `POST /api/contact`.
 5. The server validates and normalizes all fields.
-6. Nodemailer sends the enquiry through Gmail SMTP.
+6. The Resend API sends the enquiry.
 7. The visitor sees a success message and the form resets, or sees an actionable error without losing entered data.
 
 ## Fields
@@ -56,17 +56,17 @@ Remove the dedicated “Customer Support AI System” service card in English an
 
 `app/api/contact/route.ts` accepts only JSON POST requests and runs in the Node.js runtime.
 
-`lib/contact/validation.ts` owns pure normalization and validation so behavior is testable without SMTP.
+`lib/contact/validation.ts` owns pure normalization and validation so behavior is testable without the email provider.
 
-`lib/contact/mailer.ts` creates a Nodemailer Gmail transport from:
+`lib/contact/mailer.ts` creates a Resend client from:
 
-- `GMAIL_USER`
-- `GMAIL_APP_PASSWORD`
-- `CONTACT_TO_EMAIL` optional; defaults to `GMAIL_USER`
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+- `CONTACT_TO_EMAIL`
 
-The mail sender is `GMAIL_USER`. The visitor address is set as `replyTo`; it is never used as the SMTP sender. Email includes both plain-text and escaped HTML bodies.
+The sender must use `onboarding@resend.dev` during account-only testing or an address on a verified domain in production. The visitor address is set as `replyTo`; it is never used as the sender. Email includes both plain-text and escaped HTML bodies.
 
-Missing server configuration returns HTTP 503. Invalid input returns HTTP 400. SMTP failure returns HTTP 502. Unexpected errors return HTTP 500. Responses never expose credentials or raw provider errors.
+Missing server configuration returns HTTP 503. Invalid input returns HTTP 400. Provider failure returns HTTP 502. Unexpected errors return HTTP 500. Responses never expose credentials or raw provider errors.
 
 ## Spam and Abuse Controls
 
@@ -91,11 +91,11 @@ The submitted locale determines the internal email subject:
 
 `.env.example` documents variable names with placeholders only. `.env.local` remains ignored and is never committed.
 
-Gmail requires:
+Resend requires:
 
-1. Two-Step Verification enabled
-2. A 16-character Google App Password
-3. App password stored as `GMAIL_APP_PASSWORD`, never the regular Gmail password
+1. A server-only API key stored as `RESEND_API_KEY`
+2. `onboarding@resend.dev` for initial delivery to the Resend account email
+3. SPF and DKIM verification for a production sending domain
 
 ## Testing
 
