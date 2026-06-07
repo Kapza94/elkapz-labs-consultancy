@@ -141,7 +141,15 @@ export interface Dictionary {
     error: string;
     unavailable: string;
     privacy: string;
-    invalidField: string;
+    validation: {
+      name: string;
+      email: string;
+      company: string;
+      phone: string;
+      service: string;
+      challenge: string;
+      consent: string;
+    };
   };
   footer: {
     description: string;

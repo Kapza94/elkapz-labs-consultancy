@@ -74,6 +74,25 @@ describe("validateContactSubmission", () => {
     }
   });
 
+  it.each([
+    "call me maybe",
+    "+381 six zero 123",
+    "☎️ +381 60 123",
+    "+381 60 123 4567 ext 42",
+    "12345",
+    "+1234567890123456",
+  ])("rejects malformed phone number %s", (phone) => {
+    const result = validateContactSubmission({
+      ...validSubmission,
+      phone,
+    });
+
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(result.errors.phone).toBeDefined();
+    }
+  });
+
   it("rejects oversized values", () => {
     const result = validateContactSubmission({
       ...validSubmission,
